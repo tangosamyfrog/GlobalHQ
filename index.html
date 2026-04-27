@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Health Equity Summit — by Go!Mama</title>
+  <meta name="description" content="An expert-led summit advancing health equity in women's maternal health through collaboration, innovation, and actionable change." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-deep:   #2B5672;
+      --blue-bright: #116DFF;
+      --purple:      #742A83;
+      --yellow:      #F9EC00;
+      --blush:       #FFD9F3;
+      --lavender:    #EFBDF3;
+      --ink:         #0D0D1A;
+      --ink-soft:    #3D3D5C;
+      --white:       #FFFFFF;
+      --off-white:   #FAF9FF;
+      --border:      rgba(43,86,114,0.12);
+      --font-body:   'Inter', sans-serif;
+      --font-display:'Playfair Display', serif;
+      --max-w:       1200px;
+      --radius:      16px;
+      --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── UTILITY ──────────────────────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+    .tag-outline {
+      background: transparent;
+      border: 1.5px solid var(--blue-deep);
+      color: var(--blue-deep);
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--blue-bright);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: #0055d4; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(17,109,255,0.35); }
+    .btn-secondary {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+    .btn-secondary:hover { background: #ece200; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(249,236,0,0.4); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* ─── NAVBAR ───────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.06);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple), var(--blue-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      font-family: var(--font-display);
+    }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .nav-logo-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .nav-logo-sub {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--purple);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--blue-bright); }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      margin: 5px 0;
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(116,42,131,0.45) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(17,109,255,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 90% 10%, rgba(43,86,114,0.6) 0%, transparent 50%),
+        linear-gradient(160deg, #0D0D1A 0%, #1a103a 50%, #0f1e35 100%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-orbs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+    }
+    .orb-1 { width: 500px; height: 500px; background: var(--purple); top: -100px; right: -80px; animation: float1 8s ease-in-out infinite; }
+    .orb-2 { width: 300px; height: 300px; background: var(--blue-bright); bottom: 50px; left: -60px; animation: float2 10s ease-in-out infinite; }
+    .orb-3 { width: 200px; height: 200px; background: var(--yellow); opacity: 0.15; top: 40%; left: 40%; animation: float3 12s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,20px) scale(1.05)} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-30px) scale(1.08)} }
+    @keyframes float3 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(20px,15px)} 66%{transform:translate(-10px,25px)} }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 140px 0 100px;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .hero-eyebrow-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      max-width: 800px;
+      margin-bottom: 12px;
+    }
+    .hero-title-accent {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.4);
+      display: block;
+    }
+    .hero-title-highlight {
+      background: linear-gradient(90deg, #EFBDF3, var(--yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-byline {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+    }
+    .hero-byline span {
+      color: var(--lavender);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+    .hero-description {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .hero-description strong {
+      color: rgba(255,255,255,0.95);
+      font-weight: 600;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 72px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 40px;
+    }
+    .hero-stat {}
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-number span {
+      background: linear-gradient(90deg, var(--lavender), var(--yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    }
+
+    /* ─── MARQUEE STRIP ────────────────────────────────────────── */
+    .marquee-strip {
+      background: var(--yellow);
+      padding: 14px 0;
+      overflow: hidden;
+      border-top: none;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 24s linear infinite;
+      width: max-content;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 40px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+    }
+    @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+    /* ─── SECTION: PURPOSE ─────────────────────────────────────── */
+    .purpose {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .purpose-content {}
+    .purpose-heading {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .purpose-heading em {
+      font-style: italic;
+      color: var(--purple);
+    }
+    .purpose-text {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .purpose-visual {
+      position: relative;
+    }
+    .purpose-card-stack {
+      position: relative;
+      height: 420px;
+    }
+    .purpose-card {
+      position: absolute;
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .purpose-card-main {
+      top: 0; left: 0; right: 0;
+      background: linear-gradient(135deg, var(--blue-deep), #1a3a52);
+      color: white;
+    }
+    .purpose-card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .purpose-card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .purpose-card-body {
+      font-size: 14px;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+    .purpose-card-float {
+      bottom: 0; right: 0;
+      width: 240px;
+      border: 1.5px solid var(--border);
+      transform: rotate(2deg);
+    }
+    .purpose-card-float-2 {
+      bottom: 60px; left: 20px;
+      width: 180px;
+      transform: rotate(-3deg);
+      background: var(--off-white);
+      border: 1.5px solid var(--border);
+    }
+    .purpose-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--blush);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 8px;
+    }
+    .purpose-pill-icon { font-size: 16px; }
+    .purpose-quote {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--ink-soft);
+      border-left: 3px solid var(--purple);
+      padding-left: 20px;
+      margin-top: 32px;
+      line-height: 1.7;
+    }
+
+    /* ─── SECTION: PILLARS ─────────────────────────────────────── */
+    .pillars {
+      padding: 120px 0;
+      background: var(--off-white);
+    }
+    .pillars-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 72px;
+    }
+    .pillars-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .pillars-subtitle {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      border: 1.5px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+    .pillar-card:nth-child(1)::before { background: var(--blue-bright); }
+    .pillar-card:nth-child(2)::before { background: var(--purple); }
+    .pillar-card:nth-child(3)::before { background: linear-gradient(90deg, var(--purple), var(--blue-bright)); }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+      border-color: transparent;
+    }
+    .pillar-number {
+      font-family: var(--font-display);
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--border);
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .pillar-card:nth-child(1):hover .pillar-number { color: rgba(17,109,255,0.08); }
+    .pillar-card:nth-child(2):hover .pillar-number { color: rgba(116,42,131,0.08); }
+    .pillar-card:nth-child(3):hover .pillar-number { color: rgba(116,42,131,0.06); }
+    .pillar-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .pillar-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .pillar-desc {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .pillar-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pillar-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+    .pillar-bullets li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* ─── SECTION: WHO ATTENDS ─────────────────────────────────── */
+    .attendees {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .attendees-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .attendees-content {}
+    .attendees-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .attendees-desc {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .attendee-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .attendee-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1.5px solid var(--border);
+      color: var(--ink);
+      background: var(--white);
+      transition: var(--transition);
+    }
+    .attendee-tag:hover {
+      background: var(--off-white);
+      border-color: var(--blue-deep);
+      color: var(--blue-deep);
+    }
+    .attendee-tag-icon { font-size: 16px; }
+    .attendees-visual {}
+    .journey-block {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, #1a3a52 100%);
+      border-radius: 24px;
+      padding: 48px 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .journey-block::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(116,42,131,0.3);
+    }
+    .journey-block::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(17,109,255,0.2);
+    }
+    .journey-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-sub {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-stages {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-stage {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .journey-stage:last-child { border-bottom: none; }
+    .journey-stage-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .journey-stage-content {}
+    .journey-stage-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .journey-stage-detail {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* ─── SECTION: OUTCOMES ────────────────────────────────────── */
+    .outcomes {
+      padding: 120px 0;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .outcomes::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(116,42,131,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(17,109,255,0.2) 0%, transparent 60%);
+    }
+    .outcomes-inner { position: relative; z-index: 1; }
+    .outcomes-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 72px;
+    }
+    .outcomes-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .outcomes-subtitle {
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .outcome-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      transition: var(--transition);
+    }
+    .outcome-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+    .outcome-card-wide {
+      grid-column: 1 / -1;
+    }
+    .outcome-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .outcome-icon-blue { background: rgba(17,109,255,0.15); }
+    .outcome-icon-purple { background: rgba(116,42,131,0.2); }
+    .outcome-icon-yellow { background: rgba(249,236,0,0.12); }
+    .outcome-icon-pink { background: rgba(255,217,243,0.1); }
+    .outcome-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .outcome-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+    .outcome-wide-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* ─── SECTION: GLOBAL REACH ────────────────────────────────── */
+    .global {
+      padding: 120px 0;
+      background: var(--off-white);
+    }
+    .global-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 72px;
+    }
+    .global-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .global-subtitle {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .country-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      transition: var(--transition);
+    }
+    .country-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .country-flag { font-size: 28px; }
+    .country-info {}
+    .country-name { font-size: 15px; font-weight: 600; color: var(--ink); }
+    .country-role { font-size: 12px; color: var(--ink-soft); }
+    .global-note {
+      text-align: center;
+      font-size: 15px;
+      color: var(--ink-soft);
+      padding: 24px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1.5px dashed var(--border);
+    }
+    .global-note strong { color: var(--purple); }
+
+    /* ─── SECTION: PARTNERS ────────────────────────────────────── */
+    .partners {
+      padding: 80px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .partners-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0.5;
+      margin-bottom: 40px;
+    }
+    .partners-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .partner-placeholder {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .partner-logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      opacity: 0.25;
+      letter-spacing: -0.02em;
+      transition: var(--transition);
+    }
+    .partner-logo-text:hover { opacity: 0.5; }
+
+    /* ─── SECTION: REGISTER ────────────────────────────────────── */
+    .register {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .register-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .register-content {}
+    .register-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .register-title em {
+      font-style: italic;
+      color: var(--purple);
+    }
+    .register-desc {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .register-points {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .register-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .register-point-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+    .register-point-text {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      padding-top: 5px;
+    }
+    .register-form-wrap {
+      background: var(--off-white);
+      border-radius: 24px;
+      padding: 48px 40px;
+      border: 1.5px solid var(--border);
+    }
+    .form-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .form-sub {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--white);
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: var(--blue-bright); box-shadow: 0 0 0 3px rgba(17,109,255,0.1); }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-checkbox-group {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .form-checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--purple);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .form-checkbox-label {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--purple), var(--blue-deep));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .form-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(116,42,131,0.4);
+    }
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 12px;
+      opacity: 0.6;
+    }
+
+    /* ─── SECTION: CTA BANNER ──────────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--blue-deep) 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .cta-banner-orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(249,236,0,0.1);
+      filter: blur(80px);
+      bottom: -100px;
+      right: -80px;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-tag {
+      display: inline-block;
+      background: rgba(249,236,0,0.2);
+      color: var(--yellow);
+      border: 1px solid rgba(249,236,0,0.3);
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .cta-desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      padding: 72px 0 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 40px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple), var(--blue-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      font-family: var(--font-display);
+    }
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-logo-title { font-size: 14px; font-weight: 700; color: white; }
+    .footer-logo-sub { font-size: 11px; color: var(--purple); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      max-width: 320px;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .footer-social-link:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .footer-col-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copyright {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+    .footer-copyright a {
+      color: var(--lavender);
+      transition: opacity var(--transition);
+    }
+    .footer-copyright a:hover { opacity: 0.7; }
+    .footer-badges {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-badge {
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── SUCCESS STATE ────────────────────────────────────────── */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 0;
+    }
+    .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+    .form-success-title { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .form-success-sub { font-size: 15px; color: var(--ink-soft); }
+
+    /* ─── MOBILE ────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .purpose-grid,
+      .attendees-grid,
+      .register-grid { grid-template-columns: 1fr; gap: 48px; }
+      .purpose-card-stack { display: none; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .outcome-wide-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pillars-grid,
+      .countries-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links,
+      .nav-cta .btn:not(.btn-primary) { display: none; }
+      .hero-stats { gap: 32px; }
+      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .partners-row { gap: 32px; }
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────────────── -->
+  <nav class="nav" id="mainNav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-mark">G</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-title">Global Health Equity Summit</span>
+            <span class="nav-logo-sub">by Go!Mama</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#purpose">About</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#attendees">Who Attends</a></li>
+          <li><a href="#global">Global</a></li>
+          <li><a href="#register">Get Involved</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#register" class="btn btn-primary">Express Interest</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="container">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Expert Summit · 2025</span>
+        </div>
+        <h1 class="hero-title">
+          Global Health
+          <span class="hero-title-highlight">Equity Summit</span>
+        </h1>
+        <p class="hero-byline">Presented by <span>Go!Mama</span></p>
+        <p class="hero-description">
+          A curated, expert-led summit <strong>advancing health equity in women's maternal health</strong> — bringing together the people who can move the needle: clinicians, policymakers, funders, founders, and community voices.
+        </p>
+        <div class="hero-actions">
+          <a href="#register" class="btn btn-secondary">Express Your Interest</a>
+          <a href="#purpose" class="btn btn-ghost">Learn More</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number"><span>6+</span></div>
+            <div class="hero-stat-label">Countries Represented</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number"><span>3</span></div>
+            <div class="hero-stat-label">Core Action Pillars</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number"><span>1</span></div>
+            <div class="hero-stat-label">Focused Day of Change</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number"><span>∞</span></div>
+            <div class="hero-stat-label">Lasting Impact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── MARQUEE ───────────────────────────────────────────────── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span> Health Equity</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Maternal Health</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Policy Change</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Innovation in Women's Health</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Global Collaboration</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Informed Communities</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Funding for Impact</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Empowered Decisions</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span> Health Equity</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Maternal Health</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Policy Change</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Innovation in Women's Health</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Global Collaboration</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Informed Communities</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Funding for Impact</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> Empowered Decisions</span>
+    </div>
+  </div>
+
+  <!-- ─── PURPOSE ──────────────────────────────────────────────── -->
+  <section class="purpose" id="purpose">
+    <div class="container">
+      <div class="purpose-grid">
+        <div class="purpose-content fade-up">
+          <p class="section-label">Why This Summit</p>
+          <h2 class="purpose-heading">
+            Not a conference.<br>
+            A <em>catalyst</em> for change.
+          </h2>
+          <p class="purpose-text">
+            The Global Health Equity Summit is a deliberately curated, high-signal event. Every participant is here because they can move the needle — whether through clinical expertise, policy influence, capital allocation, or lived experience. No filler. No spectacle. Just the conversations that matter.
+          </p>
+          <p class="purpose-text">
+            At its core, this summit addresses the full maternal health journey — from fertility and pre-pregnancy through pregnancy, postnatal care, and the ongoing support women need across work, home, and community. The gaps are real. The solutions exist. What's needed now is the ecosystem to scale them.
+          </p>
+          <blockquote class="purpose-quote">
+            "Health equity isn't about levelling down — it's about raising every woman's access to the knowledge, care, and support she deserves."
+          </blockquote>
+        </div>
+        <div class="purpose-visual fade-up delay-2">
+          <div class="purpose-card-stack">
+            <div class="purpose-card purpose-card-main">
+              <p class="purpose-card-tag">Summit Mission</p>
+              <h3 class="purpose-card-title">Building a Transparent, Cohesive Ecosystem for Women's Health</h3>
+              <p class="purpose-card-body">Linking medical practice, policy support, and innovation funding to create lasting systemic change across the maternal health journey.</p>
+            </div>
+            <div class="purpose-card purpose-card-float">
+              <div class="purpose-pill">
+                <span class="purpose-pill-icon">🌐</span>
+                Global voices
+              </div>
+              <div class="purpose-pill">
+                <span class="purpose-pill-icon">💡</span>
+                Evidence-led
+              </div>
+              <div class="purpose-pill">
+                <span class="purpose-pill-icon">🤝</span>
+                Action-oriented
+              </div>
+            </div>
+            <div class="purpose-card purpose-card-float-2">
+              <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:6px;">Focus Areas</p>
+              <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;">Medical practice · Policy · Innovation · Funding · Community</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PILLARS ───────────────────────────────────────────────── -->
+  <section class="pillars" id="pillars">
+    <div class="container">
+      <div class="pillars-header fade-up">
+        <p class="section-label">Three Pillars of Action</p>
+        <h2 class="pillars-title">Where the summit focuses its energy</h2>
+        <p class="pillars-subtitle">These three pillars frame every session, every panel, and every conversation. Together, they form a blueprint for a more equitable women's health landscape.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card fade-up delay-1">
+          <div class="pillar-number">01</div>
+          <span class="pillar-icon">📚</span>
+          <h3 class="pillar-name">Literacy</h3>
+          <p class="pillar-desc">Closing the knowledge gap between what medicine knows and what women — and their care teams — actually understand and can act on.</p>
+          <ul class="pillar-bullets">
+            <li>Sharing validated clinical findings with frontline practitioners</li>
+            <li>Amplifying ground-level challenges alongside expert research</li>
+            <li>Aligning stakeholder understanding across sectors</li>
+            <li>Equipping communities to make informed decisions</li>
+          </ul>
+        </div>
+        <div class="pillar-card fade-up delay-2">
+          <div class="pillar-number">02</div>
+          <span class="pillar-icon">🔓</span>
+          <h3 class="pillar-name">Accessibility</h3>
+          <p class="pillar-desc">Ensuring that advances in maternal health reach every woman — regardless of geography, income, or circumstance.</p>
+          <ul class="pillar-bullets">
+            <li>Mapping gaps in healthcare delivery and support systems</li>
+            <li>Identifying models that scale beyond urban centres</li>
+            <li>Bridging employer, community, and clinical care</li>
+            <li>Reducing structural barriers through policy and design</li>
+          </ul>
+        </div>
+        <div class="pillar-card fade-up delay-3">
+          <div class="pillar-number">03</div>
+          <span class="pillar-icon">🚀</span>
+          <h3 class="pillar-name">Innovation</h3>
+          <p class="pillar-desc">Showcasing and funding the technologies, models, and approaches that are already accelerating progress — and deserve to scale.</p>
+          <ul class="pillar-bullets">
+            <li>Spotlighting breakthrough implementations in women's health</li>
+            <li>Connecting founders and innovators with aligned capital</li>
+            <li>Building the case for sustained, strategic investment</li>
+            <li>Demonstrating ROI on health equity for corporates and VCs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHO ATTENDS ───────────────────────────────────────────── -->
+  <section class="attendees" id="attendees">
+    <div class="container">
+      <div class="attendees-grid">
+        <div class="attendees-content fade-up">
+          <p class="section-label">Curated Participants</p>
+          <h2 class="attendees-title">The people who move systems are in this room</h2>
+          <p class="attendees-desc">This is not an open-registration event. Every attendee is carefully selected for the perspective, influence, or expertise they bring to the table — ensuring every conversation has the potential to translate into real-world action.</p>
+          <div class="attendee-tags">
+            <span class="attendee-tag"><span class="attendee-tag-icon">🏥</span> Healthcare Practitioners</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🏛</span> Policymakers</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">💼</span> Venture Capitalists</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🌱</span> Impact Donors</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🔬</span> Researchers</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🚀</span> FemTech Founders</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🏢</span> Corporates & HR Leaders</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🏦</span> Banking Sector Leaders</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">🌍</span> NGO & Advocacy Leaders</span>
+            <span class="attendee-tag"><span class="attendee-tag-icon">📣</span> Community Voices</span>
+          </div>
+        </div>
+        <div class="attendees-visual fade-up delay-2">
+          <div class="journey-block">
+            <h3 class="journey-title">The Maternal Health Journey</h3>
+            <p class="journey-sub">Our thematic lens — end to end</p>
+            <div class="journey-stages">
+              <div class="journey-stage">
+                <div class="journey-stage-dot"></div>
+                <div class="journey-stage-content">
+                  <div class="journey-stage-name">Fertility & Pre-Pregnancy</div>
+                  <div class="journey-stage-detail">Awareness, planning, and access to care</div>
+                </div>
+              </div>
+              <div class="journey-stage">
+                <div class="journey-stage-dot"></div>
+                <div class="journey-stage-content">
+                  <div class="journey-stage-name">Pregnancy</div>
+                  <div class="journey-stage-detail">Medical, emotional, and workplace support</div>
+                </div>
+              </div>
+              <div class="journey-stage">
+                <div class="journey-stage-dot"></div>
+                <div class="journey-stage-content">
+                  <div class="journey-stage-name">Postnatal Care</div>
+                  <div class="journey-stage-detail">Recovery, mental health, and community</div>
+                </div>
+              </div>
+              <div class="journey-stage">
+                <div class="journey-stage-dot"></div>
+                <div class="journey-stage-content">
+                  <div class="journey-stage-name">Workplace & Home</div>
+                  <div class="journey-stage-detail">Employer policies, flexible support, family systems</div>
+                </div>
+              </div>
+              <div class="journey-stage">
+                <div class="journey-stage-dot"></div>
+                <div class="journey-stage-content">
+                  <div class="journey-stage-name">Community & Long-Term</div>
+                  <div class="journey-stage-detail">Sustained health equity beyond the event</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OUTCOMES ──────────────────────────────────────────────── -->
+  <section class="outcomes" id="outcomes">
+    <div class="outcomes-inner">
+      <div class="container">
+        <div class="outcomes-header fade-up">
+          <p class="section-label" style="color:var(--lavender)">What We're Building Toward</p>
+          <h2 class="outcomes-title">Four outcomes that outlast the summit</h2>
+          <p class="outcomes-subtitle">This is a day of dialogue with a mandate for action. These are the commitments every attendee leaves with.</p>
+        </div>
+        <div class="outcomes-grid">
+          <div class="outcome-card fade-up delay-1">
+            <div class="outcome-icon outcome-icon-blue">🌐</div>
+            <h3 class="outcome-title">Ecosystem Building</h3>
+            <p class="outcome-desc">Leave with new cross-sector relationships and the infrastructure to sustain collaboration between medical, policy, and funding communities long after the day ends.</p>
+          </div>
+          <div class="outcome-card fade-up delay-2">
+            <div class="outcome-icon outcome-icon-purple">📖</div>
+            <h3 class="outcome-title">Shared Knowledge</h3>
+            <p class="outcome-desc">Align on validated findings, surface underreported challenges, and take home a common language that bridges clinicians, operators, and decision-makers.</p>
+          </div>
+          <div class="outcome-card fade-up delay-3">
+            <div class="outcome-icon outcome-icon-yellow">💰</div>
+            <h3 class="outcome-title">Funding Commitments</h3>
+            <p class="outcome-desc">Donors and VCs see exactly where capital creates the most impact. Commitments made here directly fund the next wave of women's health innovation and access.</p>
+          </div>
+          <div class="outcome-card outcome-card-wide fade-up delay-4">
+            <div class="outcome-wide-inner">
+              <div>
+                <div class="outcome-icon outcome-icon-pink">⚡</div>
+                <h3 class="outcome-title">Actionable Policy Change</h3>
+                <p class="outcome-desc">Attendees leave not just inspired, but equipped — with best practices, breakthrough case studies, and the peer relationships needed to influence policy, reform funding models, and reshape how women's health is resourced at the institutional level.</p>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div style="padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.08);">
+                  <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:6px;">Accountability</p>
+                  <p style="font-size:14px;color:rgba(255,255,255,0.6);">Clear follow-up mechanisms to track commitments and progress</p>
+                </div>
+                <div style="padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.08);">
+                  <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--lavender);margin-bottom:6px;">Transparency</p>
+                  <p style="font-size:14px;color:rgba(255,255,255,0.6);">Open reporting on where funds go and what changes</p>
+                </div>
+                <div style="padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.08);">
+                  <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">Momentum</p>
+                  <p style="font-size:14px;color:rgba(255,255,255,0.6);">Annual cadence to measure, report, and accelerate progress</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GLOBAL REACH ──────────────────────────────────────────── -->
+  <section class="global" id="global">
+    <div class="container">
+      <div class="global-header fade-up">
+        <p class="section-label">Global Participation</p>
+        <h2 class="global-title">One conversation. Multiple continents. One goal.</h2>
+        <p class="global-subtitle">Participants arrive from across Asia-Pacific and beyond, bringing regional best practices and unique perspectives to the global women's health equity dialogue.</p>
+      </div>
+      <div class="countries-grid fade-up">
+        <div class="country-card">
+          <span class="country-flag">🇸🇬</span>
+          <div class="country-info">
+            <div class="country-name">Singapore</div>
+            <div class="country-role">Host country · Regional hub</div>
+          </div>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇲🇾</span>
+          <div class="country-info">
+            <div class="country-name">Malaysia</div>
+            <div class="country-role">Policy & community voices</div>
+          </div>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇦🇺</span>
+          <div class="country-info">
+            <div class="country-name">Australia</div>
+            <div class="country-role">Clinical innovation & research</div>
+          </div>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇹🇼</span>
+          <div class="country-info">
+            <div class="country-name">Taiwan</div>
+            <div class="country-role">Technology & healthcare systems</div>
+          </div>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇹🇭</span>
+          <div class="country-info">
+            <div class="country-name">Thailand</div>
+            <div class="country-role">Maternal care access models</div>
+          </div>
+        </div>
+        <div class="country-card">
+          <span class="country-flag">🇻🇳</span>
+          <div class="country-info">
+            <div class="country-name">Vietnam</div>
+            <div class="country-role">Ground-level implementation</div>
+          </div>
+        </div>
+      </div>
+      <div class="global-note fade-up">
+        <strong>Open to participants from any region.</strong> The summit welcomes voices from across the world — wherever women's health equity is a priority.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PARTNERS ──────────────────────────────────────────────── -->
+  <section class="partners">
+    <div class="container">
+      <p class="partners-label">Presented by Go!Mama · Supported by our partner ecosystem</p>
+      <div class="partners-row">
+        <div class="partner-placeholder"><span class="partner-logo-text">Go!Mama</span></div>
+        <div class="partner-placeholder"><span class="partner-logo-text">HealthTech Asia</span></div>
+        <div class="partner-placeholder"><span class="partner-logo-text">WomenLead</span></div>
+        <div class="partner-placeholder"><span class="partner-logo-text">MaternalVentures</span></div>
+        <div class="partner-placeholder"><span class="partner-logo-text">EquityFirst</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REGISTER ──────────────────────────────────────────────── -->
+  <section class="register" id="register">
+    <div class="container">
+      <div class="register-grid">
+        <div class="register-content fade-up">
+          <p class="section-label">Get Involved</p>
+          <h2 class="register-title">
+            Ready to be part of <em>the change</em>?
+          </h2>
+          <p class="register-desc">
+            Whether you're a funder, a policymaker, a clinician, or a founder — if you're committed to advancing women's health equity, there's a seat at this table for you.
+          </p>
+          <div class="register-points">
+            <div class="register-point">
+              <div class="register-point-icon">🎯</div>
+              <p class="register-point-text"><strong>Attend the Summit</strong> — Join as a curated participant and be part of the conversations that shape policy and funding decisions.</p>
+            </div>
+            <div class="register-point">
+              <div class="register-point-icon">💡</div>
+              <p class="register-point-text"><strong>Become a Partner or Sponsor</strong> — Position your organisation at the forefront of the women's health equity movement and connect with aligned leaders.</p>
+            </div>
+            <div class="register-point">
+              <div class="register-point-icon">🌱</div>
+              <p class="register-point-text"><strong>Commit as a Funder</strong> — See exactly where capital creates impact and make a commitment that will be tracked, reported, and celebrated.</p>
+            </div>
+            <div class="register-point">
+              <div class="register-point-icon">📢</div>
+              <p class="register-point-text"><strong>Share Your Platform</strong> — Help amplify the summit and the broader conversation around maternal health equity across your network.</p>
+            </div>
+          </div>
+        </div>
+        <div class="register-form-wrap fade-up delay-2">
+          <div id="formContent">
+            <h3 class="form-title">Express Your Interest</h3>
+            <p class="form-sub">Tell us a little about yourself and how you'd like to be involved. Our team will follow up personally.</p>
+            <form id="interestForm" onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="firstName">First Name</label>
+                  <input class="form-input" type="text" id="firstName" name="firstName" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="lastName">Last Name</label>
+                  <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Work Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="jane@organisation.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="org">Organisation</label>
+                <input class="form-input" type="text" id="org" name="org" placeholder="Your organisation" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="role">Your Role</label>
+                <select class="form-select" id="role" name="role" required>
+                  <option value="" disabled selected>Select your role...</option>
+                  <option>Healthcare Practitioner / Clinician</option>
+                  <option>Policymaker / Government</option>
+                  <option>Investor / Venture Capital</option>
+                  <option>Philanthropist / Donor</option>
+                  <option>Founder / FemTech</option>
+                  <option>Corporate / HR Leader</option>
+                  <option>Researcher / Academic</option>
+                  <option>NGO / Advocacy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interest">How would you like to be involved?</label>
+                <select class="form-select" id="interest" name="interest" required>
+                  <option value="" disabled selected>Select your interest...</option>
+                  <option>Attend as a participant</option>
+                  <option>Partner or sponsor the summit</option>
+                  <option>Commit as a funder or donor</option>
+                  <option>Speak or contribute expertise</option>
+                  <option>Amplify and share</option>
+                  <option>Stay informed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Anything you'd like to share?  <span style="font-weight:400;color:var(--ink-soft);">(optional)</span></label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your work in women's health, or what you hope to contribute..."></textarea>
+              </div>
+              <div class="form-checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label class="form-checkbox-label" for="consent">I agree to be contacted by the Go!Mama team regarding the Global Health Equity Summit and related updates.</label>
+              </div>
+              <button type="submit" class="form-submit">Submit Expression of Interest →</button>
+              <p class="form-note">Your information is kept private. No spam. Ever.</p>
+            </form>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✅</div>
+            <h3 class="form-success-title">Thank you — we'll be in touch.</h3>
+            <p class="form-success-sub">Your expression of interest has been received. A member of the Go!Mama team will follow up with you personally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA BANNER ────────────────────────────────────────────── -->
+  <section class="cta-banner">
+    <div class="cta-banner-orb"></div>
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <span class="cta-tag">The Future of Women's Health</span>
+        <h2 class="cta-title">This is where the ecosystem comes together.</h2>
+        <p class="cta-desc">One focused day. The right people. Real commitments. Lasting change. Join us in advancing health equity for every woman, at every stage.</p>
+        <div class="cta-actions">
+          <a href="#register" class="btn btn-secondary">Express Your Interest</a>
+          <a href="mailto:summit@gomama.com.sg" class="btn btn-ghost">Contact the Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">G</div>
+            <div class="footer-logo-text">
+              <span class="footer-logo-title">Global Health Equity Summit</span>
+              <span class="footer-logo-sub">by Go!Mama</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">An expert-led summit advancing health equity in women's maternal health — through literacy, accessibility, and innovation.</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="footer-social-link" aria-label="X/Twitter">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Summit</p>
+          <ul class="footer-links">
+            <li><a href="#purpose">About the Summit</a></li>
+            <li><a href="#pillars">Three Pillars</a></li>
+            <li><a href="#attendees">Who Attends</a></li>
+            <li><a href="#outcomes">Outcomes</a></li>
+            <li><a href="#global">Global Reach</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Get Involved</p>
+          <ul class="footer-links">
+            <li><a href="#register">Express Interest</a></li>
+            <li><a href="#register">Partner with Us</a></li>
+            <li><a href="#register">Become a Funder</a></li>
+            <li><a href="mailto:summit@gomama.com.sg">Contact Us</a></li>
+            <li><a href="https://gomama.com.sg" target="_blank" rel="noopener">Go!Mama Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 <a href="https://gomama.com.sg" target="_blank" rel="noopener">Go!Mama</a>. All rights reserved. Global Health Equity Summit.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">Health Equity</span>
+          <span class="footer-badge">Women's Health</span>
+          <span class="footer-badge">Asia-Pacific</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── NAV SCROLL ────────────────────────────────────────────
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── INTERSECTION OBSERVER ─────────────────────────────────
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // ─── FORM SUBMIT ───────────────────────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+      const formContent = document.getElementById('formContent');
+      const formSuccess = document.getElementById('formSuccess');
+      formContent.style.display = 'none';
+      formSuccess.style.display = 'block';
+    }
+
+    // ─── SMOOTH SCROLL ─────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
